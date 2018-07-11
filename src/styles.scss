@@ -1,0 +1,438 @@
+@import './assets/styles/reset';
+
+.wr {
+  min-height: 100vh;
+  background: #64666b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// <AUTH STYLES>
+
+.auth {
+  flex-basis: 540px;
+  margin: 0 auto;
+  background: #fff;
+
+  &-title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding: 20px 30px;
+    border-bottom: 1px solid deepskyblue;
+
+    &__logo {
+      flex-basis: 30%;
+      align-self: center;
+
+      img {
+        max-width: 60%;
+      }
+    }
+
+    &__text {
+      flex-basis: 70%;
+      align-self: center;
+    }
+  }
+
+  .alert {
+    &-danger,
+    &-success {
+      color: #fff;
+      padding: 20px;
+      font-size: 18px;
+      border-radius: 5px;
+      background: #ff3535;
+    }
+
+    &-success {
+      background: #30ea14;
+    }
+  }
+
+  &-content {
+    padding: 35px 50px;
+
+    &__text {
+      text-align: center;
+      font-size: 18px;
+      color: darkslategrey;
+      margin-bottom: 25px;
+    }
+
+    &__account {
+      text-align: center;
+      margin: 20px 0 0 0;
+      font-size: 18px;
+      color: #64666b;
+
+      a {
+        color: #0088b5;
+        text-decoration: none;
+      }
+    }
+
+    form {
+      .form-group {
+        margin: 10px 0;
+
+        &__label, &__input {
+          width: 100%;
+          margin: 5px 0;
+          padding: 10px 0;
+          border: none;
+          border-bottom: 1px solid lightgrey;
+          font-size: 16px;
+        }
+
+        &__label {
+          font-weight: 500;
+          font-size: 18px;
+
+          &-checkbox {
+            border: none;
+            margin-bottom: 15px;
+            display: block;
+          }
+        }
+
+        &__input {
+          font-style: italic;
+          outline: none;
+        }
+
+        &__submit {
+          color: #fff;
+          width: 100%;
+          padding: 10px 0;
+          font-size: 18px;
+          border: 1px solid #0088b5;
+          cursor: pointer;
+          background: #11a8da;
+
+          &:hover {
+            background: #0f97c4;
+          }
+
+          &[disabled] {
+            cursor: not-allowed;
+            background: #91c3da;
+
+            &:hover {
+              background: #91c3da;
+            }
+          }
+        }
+
+        &.has-error {
+
+          .form-group__input {
+            border-color: red;
+          }
+
+          .form-group__help-text {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}
+
+// </AUTH STYLES>
+
+// ==================================================================
+
+// <SYSTEM STYLES>
+
+.system {
+  overflow: hidden;
+  max-height: 100vh;
+
+  &-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    &__logo,
+    &__action {
+      height: 85px;
+      line-height: 80px;
+      padding: 0 50px;
+    }
+
+    &__logo {
+      -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      background: #3a4058;
+
+      img {
+        width: 70px;
+        margin-right: 15px;
+      }
+
+      span {
+        color: #fff;
+        font-size: 18px;
+      }
+    }
+
+    &__action {
+      -ms-flex-preferred-size: 80%;
+      flex-basis: 80%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      background: #e6e6e6;
+
+      .time,
+      .user-bar {
+        -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+      }
+
+      .user-bar {
+        text-align: right;
+      }
+    }
+  }
+
+  .wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background: #f9f9f9;
+  }
+
+  &-sidebar {
+    -ms-flex-preferred-size: 20%;
+    flex-basis: 20%;
+    height: 100vh;
+    background: #3a4058;
+
+    nav {
+      .page-items {
+        .page-item {
+          i {
+            margin-right: 15px;
+          }
+
+          a {
+            color: #888888;
+            font-size: 19px;
+            padding: 20px 0 20px 30px;
+            display: block;
+            cursor: pointer;
+
+            &.active,
+            &:hover {
+              background: #1cabd8;
+              color: #d4d4d4;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-main {
+    -ms-flex-preferred-size: 80%;
+    flex-basis: 80%;
+    padding: 50px;
+
+    .header {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      padding-bottom: 20px;
+      margin-bottom: 25px;
+      border-bottom: 1px solid #d5d5d5;
+
+      .left,
+      .right {
+        -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+      }
+
+      .left {
+        h2 {
+          font-weight: bold;
+          font-size: 30px;
+          color: #555;
+        }
+      }
+
+      .right {
+        position: relative;
+
+        .reload-button {
+          position: absolute;
+          right: 0;
+          top: 0;
+          border: 1px solid #1cabd8;
+          cursor: pointer;
+          width: 35px;
+          height: 35px;
+          text-align: center;
+          line-height: 35px;
+          color: #1cabd8;
+        }
+      }
+    }
+
+    .data {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+
+      &-bill,
+      &-course {
+        -ms-flex-preferred-size: 48.5%;
+        flex-basis: 48.5%;
+        padding: 20px 20px 40px 20px;
+        background: #FFF;
+        border: 1px solid #f2f2f2;
+        box-shadow: 1px 1px 5px 0.1px #e2e2e2;
+
+        h4 {
+          font-weight: bold;
+          font-size: 20px;
+          margin-bottom: 10px;
+          color: #777;
+        }
+      }
+
+      &-bill {
+        h4 {
+          margin-bottom: 5px;
+        }
+
+        &__item {
+          padding: 20px;
+          border-bottom: 2px solid #1cabd8;
+          font-size: 18px;
+          margin-bottom: 10px;
+
+          i {
+            color: #1cabd8;
+            font-size: 25px;
+            margin-right: 20px;
+          }
+        }
+      }
+
+      &-course {
+        h4 {
+          margin-bottom: 25px;
+        }
+
+        .table {
+          display: block;
+          width: 100%;
+
+          &-thead {
+            display: block;
+            width: 100%;
+
+            &-tr {
+              border-top: 1px solid #f2f2f2;
+              border-bottom: 1px solid #f2f2f2;
+              display: block;
+              padding: 15px;
+              width: 100%;
+
+              &-td {
+                display: inline-block;
+                font-weight: bold;
+                font-size: 18px;
+                color: #555;
+                width: 30%;
+              }
+            }
+          }
+
+          &-tbody {
+            display: block;
+            width: 100%;
+
+            &-tr {
+              display: block;
+              padding: 15px;
+              border-top: 1px solid #f2f2f2;
+              width: 100%;
+
+              &-td {
+                display: inline-block;
+                font-size: 18px;
+                color: #555;
+                width: 30%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+// </SYSTEM STYLES>
+
+@media screen and (max-width: 600px) {
+  .auth {
+    flex-basis: 90%;
+
+    &-title {
+      padding: 20px 0;
+
+      &__logo {
+        flex-basis: 100%;
+        align-self: center;
+
+        img {
+          max-width: 30%;
+        }
+      }
+
+      &__text {
+        flex-basis: 100%;
+      }
+    }
+
+    &-content {
+      padding: 25px 25px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .auth {
+    flex-basis: 90%;
+
+    &-title {
+
+      &__text {
+        font-size: 25px;
+      }
+    }
+  }
+}

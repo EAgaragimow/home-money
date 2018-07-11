@@ -1,0 +1,62 @@
+<p class="auth-content__text">Регистрация для получения доступа</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group" [ngClass]="{'has-error': form.get('email').invalid && form.get('email').touched}">
+    <label class="form-group__label" for="email">Email</label>
+    <input class="form-group__input" type="email" formControlName="email" id="email" placeholder="Введите email">
+
+    <span class="form-group__help-text" *ngIf="form.get('email').invalid && form.get('email').touched">
+      <span *ngIf="form.get('email')['errors']['forbiddenEmail']">
+        Email уже сущуствует!
+      </span>
+      <span *ngIf="form.get('email')['errors']['required']">
+        Email is the required field!
+      </span>
+      <span *ngIf="!form.get('email')['errors']['required'] && !form.get('email')['errors']['forbiddenEmail']">
+        Enter the correct Email!
+      </span>
+    </span>
+  </div>
+
+  <div class="form-group" [ngClass]="{'has-error': form.get('password').invalid && form.get('password').touched}">
+    <label class="form-group__label" for="password">Password</label>
+    <input class="form-group__input" type="password" formControlName="password" id="password" placeholder="Введите пароль">
+
+    <span class="form-group__help-text" *ngIf="form.get('password').invalid && form.get('password').touched">
+      <span *ngIf="form.get('password')['errors']['required']; else lengthError">
+        Password must have higher than 7 characters!
+      </span>
+      <ng-template #lengthError>
+        Password is short, characters remaining:
+        {{
+          form.get('password')['errors']['minlength']['requiredLength'] -
+          form.get('password')['errors']['minlength']['actualLength']
+        }}
+      </ng-template>
+    </span>
+  </div>
+
+  <div class="form-group" [ngClass]="{'has-error': form.get('name').invalid && form.get('name').touched}">
+    <label class="form-group__label" for="name">Имя</label>
+    <input class="form-group__input" type="text" formControlName="name" id="name" placeholder="Введите имя">
+
+    <span class="form-group__help-text" *ngIf="form.get('name').invalid && form.get('name').touched">
+      <span *ngIf="form.get('name')['errors']['required']">
+        Name is the required field!
+      </span>
+    </span>
+  </div>
+
+  <div class="form-group">
+    <label class="form-group__label form-group__label-checkbox">
+      <input class="form-group__checkbox" type="checkbox" formControlName="checkbox" id="checkbox">
+      Согласен с правилами
+    </label>
+  </div>
+
+  <div class="form-group">
+    <button class="form-group__submit" type="submit" [disabled]="form.invalid">Зарегистрироваться</button>
+  </div>
+</form>
+<div class="auth-content__account">
+  Уже есть аккаунт? <a routerLink="/login">Войти!</a>
+</div>

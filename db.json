@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "mel@gmail.com",
+      "password": "12345678",
+      "name": "Администратор"
+    }
+  ],
+  "bill": {
+    "value": 50000,
+    "currency": "UAH"
+  },
+  "categories": [
+    {
+      "name": "Дом",
+      "capacity": 7000,
+      "id": 1
+    }
+  ]
+}

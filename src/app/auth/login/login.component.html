@@ -1,0 +1,42 @@
+<p class="auth-content__text">Войдите для работы</p>
+<div class="auth-alert alert-{{ message.type }}" *ngIf="message.text">{{ message.text }}</div>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group" [ngClass]="{'has-error': form.get('email').invalid && form.get('email').touched}">
+    <label class="form-group__label" for="email">Email</label>
+    <input class="form-group__input" type="email" formControlName="email" id="email" placeholder="Введите Ваш email">
+
+    <span class="form-group__help-text" *ngIf="form.get('email').invalid && form.get('email').touched">
+      <span *ngIf="form.get('email')['errors']['required']; else emailError">
+        Email is the required field!
+      </span>
+      <ng-template #emailError>
+        Enter the correct Email!
+      </ng-template>
+    </span>
+  </div>
+
+  <div class="form-group" [ngClass]="{'has-error': form.get('password').invalid && form.get('password').touched}">
+    <label class="form-group__label" for="password">Password</label>
+    <input class="form-group__input" type="password" formControlName="password" id="password" placeholder="Пароль">
+
+    <span class="form-group__help-text" *ngIf="form.get('password').invalid && form.get('password').touched">
+      <span *ngIf="form.get('password')['errors']['required']; else lengthError">
+        Password must have higher than 7 characters!
+      </span>
+      <ng-template #lengthError>
+        Password is short, characters remaining:
+        {{
+          form.get('password')['errors']['minlength']['requiredLength'] -
+          form.get('password')['errors']['minlength']['actualLength']
+        }}
+      </ng-template>
+    </span>
+  </div>
+
+  <div class="form-group">
+    <button class="form-group__submit" [disabled]="form.invalid" type="submit">Войти</button>
+  </div>
+</form>
+<div class="auth-content__account">
+  Нет аккаунта? <a routerLink="/registration">Зарегистрироваться!</a>
+</div>
