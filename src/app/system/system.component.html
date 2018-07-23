@@ -6,7 +6,7 @@
     </a>
     <div class="system-header__action">
       <div class="time">
-        <span>12:12:12</span>
+        <span>{{ time | date : 'mediumTime' }}</span>
       </div>
       <div class="user-bar">
         <b>Здравствуйте, Эльвин</b><i class="fa fa-caret-down"></i>
@@ -47,7 +47,9 @@
     </aside>
 
     <main class="system-main">
+
       <router-outlet></router-outlet>
+
     </main>
   </div>
 </div>
