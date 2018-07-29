@@ -208,9 +208,65 @@ form {
 
       .user-bar {
         text-align: right;
+        position: relative;
 
-        b {
-          cursor: pointer;
+        .user-wrap {
+          line-height: 0;
+          float: right;
+          top: 50%;
+          z-index: 1000;
+          position: relative;
+          transform: translate(0, -50%);
+
+          .profile-name {
+            cursor: pointer;
+
+            &:hover {
+              color: #0f97c4;
+            }
+          }
+
+          .user-dropdown-menu {
+            right: -20px;
+            bottom: -125px;
+            display: none;
+            text-align: left;
+            line-height: 0;
+            background: #fff;
+            position: absolute;
+            border-radius: 3px;
+            border: 1px solid #ddd;
+            box-shadow: 0 1px 10px #ddd;
+
+            .dropdown-item {
+              padding: 17px;
+              display: inline-block;
+              color: #3a4058;
+              width: 100%;
+              cursor: pointer;
+
+              i {
+                color: #0f97c4;
+                margin-right: 5px;
+              }
+
+              &:hover {
+                color: #0f97c4;
+                background: #F5F5F5;
+              }
+            }
+
+            .dropdown-divider {
+              height: 1px;
+              background: #ddd;
+            }
+          }
+
+          &.open {
+            .user-dropdown-menu {
+              display: block;
+            }
+          }
         }
       }
     }
@@ -329,6 +385,7 @@ form {
           position: relative;
 
           .reload-button {
+            transition: all .2s ease;
             position: absolute;
             right: 0;
             top: 0;
@@ -339,6 +396,11 @@ form {
             text-align: center;
             line-height: 35px;
             color: #1cabd8;
+
+            &:hover {
+              background: #1cabd8;
+              color: #fff;
+            }
           }
         }
       }

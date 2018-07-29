@@ -6,9 +6,7 @@ import {Component, OnInit} from "@angular/core";
   styleUrls: ['./system.component.scss']
 })
 export class SystemComponent implements OnInit {
-  time = new Date();
 
   ngOnInit() {
-    setInterval(() => {this.time = new Date()}, 1000);
   }
 }

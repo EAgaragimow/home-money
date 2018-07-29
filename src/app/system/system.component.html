@@ -1,55 +1,21 @@
 <div class="system">
-  <header class="system-header">
-    <a class="system-header__logo" routerLink="bill">
-      <img src="../../assets/img/logo.png" alt="logo">
-      <span>Бухгалтерия</span>
-    </a>
-    <div class="system-header__action">
-      <div class="time">
-        <span>{{ time | date : 'mediumTime' }}</span>
-      </div>
-      <div class="user-bar">
-        <b>Здравствуйте, Эльвин <i class="fa fa-caret-down"></i></b>
-      </div>
-    </div>
-  </header>
+  <!--HEADER-->
+  <mel-header></mel-header>
+  <!--/HEADER-->
 
   <div class="wrap">
+
     <aside class="system-sidebar">
-      <nav>
-        <ul class="page-items">
-          <li class="page-item">
-            <a routerLink="bill" routerLinkActive="active">
-              <i class="fa fa-calendar-alt"></i>
-              Счёт
-            </a>
-          </li>
-          <li class="page-item">
-            <a routerLink="history" routerLinkActive="active">
-              <i class="fa fa-history"></i>
-              История
-            </a>
-          </li>
-          <li class="page-item">
-            <a routerLink="planning" routerLinkActive="active">
-              <i class="fa fa-clipboard"></i>
-              Планирование
-            </a>
-          </li>
-          <li class="page-item">
-            <a routerLink="records" routerLinkActive="active">
-              <i class="fa fa-plus-square"></i>
-              Запись
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <!--SIDEBAR-->
+      <mel-sidebar></mel-sidebar>
+      <!--/SIDEBAR-->
     </aside>
 
     <main class="system-main">
-
+      <!--MAIN-->
       <router-outlet></router-outlet>
-
+      <!--/MAIN-->
     </main>
+
   </div>
 </div>

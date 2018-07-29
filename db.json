@@ -5,11 +5,17 @@
       "email": "mel@gmail.com",
       "password": "12345678",
       "name": "Администратор"
+    },
+    {
+      "id": 2,
+      "email": "test@gmail.com",
+      "password": "testPassword",
+      "name": "TestUser"
     }
   ],
   "bill": {
     "value": 50000,
-    "currency": "UAH"
+    "currency": "RUB"
   },
   "categories": [
     {

@@ -1,3 +1,27 @@
-<p>
-  header works!
-</p>
+<header class="system-header">
+  <a class="system-header__logo" routerLink="bill">
+    <img src="../../assets/img/logo.png" alt="logo">
+    <span>Бухгалтерия</span>
+  </a>
+  <div class="system-header__action">
+    <div class="time">
+      <span>{{ time | date : 'mediumTime' }}</span>
+    </div>
+
+    <div class="user-bar">
+      <div class="user-wrap" melDropdown>
+        <a class="profile-name">Здравствуйте, {{ user['name'] }} <i class="fa fa-caret-down"></i></a>
+
+        <div class="user-dropdown-menu">
+          <a routerLink="records" class="dropdown-item">
+            <i class="fa fa-sun"></i>Сделать запись
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" (click)="onLogout()">
+            <i class="fa fa-power-off"></i>Выйти
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
