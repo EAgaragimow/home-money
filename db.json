@@ -14,7 +14,7 @@
     }
   ],
   "bill": {
-    "value": 50000,
+    "value": 100000,
     "currency": "RUB"
   },
   "categories": [

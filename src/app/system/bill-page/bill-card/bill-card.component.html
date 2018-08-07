@@ -1,12 +1,12 @@
 <h4>Счёт</h4>
 <ul class="data-bill__items">
   <li class="data-bill__item">
-    <i class="fa fa-ruble-sign"></i><span>80.560</span>
+    <i class="fa fa-ruble-sign"></i><span>{{ bill.value | number:'1.2' }}</span>
   </li>
   <li class="data-bill__item">
-    <i class="fa fa-euro-sign"></i><span>80.560</span>
+    <i class="fa fa-euro-sign"></i><span>{{ euro | number:'1.2' }}</span>
   </li>
   <li class="data-bill__item">
-    <i class="fa fa-dollar-sign"></i><span>80.560</span>
+    <i class="fa fa-dollar-sign"></i><span>{{ dollar | number:'1.2' }}</span>
   </li>
 </ul>

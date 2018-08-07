@@ -5,19 +5,21 @@
       <h2>Страница счёта</h2>
     </div>
     <div class="right">
-      <div class="reload-button">
+      <div class="reload-button" (click)="onRefresh()">
         <i class="fa fa-undo"></i>
       </div>
     </div>
   </header>
 
-  <div class="data">
+  <div class="data" *ngIf="!isLoaded">
+    Loading ...
+  </div>
+  <div class="data" *ngIf="isLoaded">
     <div class="data-bill">
-      <mel-bill-card></mel-bill-card>
+      <mel-bill-card [bill]="bill" [currency]="currency"></mel-bill-card>
     </div>
-
     <div class="data-course">
-      <mel-currency-card></mel-currency-card>
+      <mel-currency-card [currency]="currency"></mel-currency-card>
     </div>
   </div>
 </div>
