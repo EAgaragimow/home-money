@@ -2,15 +2,51 @@
   Добавить категорию
 </div>
 
-<form>
-  <div class="form-group">
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <div
+    class="form-group"
+    [ngClass]="{'has-error': name.invalid && name.touched}"
+  >
     <label for="name" class="form-group__label">Введите название</label>
-    <input type="text" class="form-group__input" id="name" placeholder="Название">
+    <input
+      type="text"
+      class="form-group__input"
+      id="name"
+      placeholder="Название"
+      required
+      ngModel
+      #name="ngModel"
+      name="name"
+    >
+    <span
+      class="form-group__help-text"
+      *ngIf="name.invalid && name.touched"
+    >
+      Category's name is required.
+    </span>
   </div>
 
-  <div class="form-group">
+  <div
+    class="form-group"
+    [ngClass]="{'has-error': capacity.invalid && capacity.touched}"
+  >
     <label for="limit" class="form-group__label">Введите лимит</label>
-    <input type="text" class="form-group__input" id="limit" placeholder="0">
+    <input
+      type="number"
+      class="form-group__input"
+      id="limit"
+      [ngModel]="1"
+      required
+      #capacity="ngModel"
+      name="capacity"
+      min="1"
+    >
+    <span
+      class="form-group__help-text"
+      *ngIf="capacity.invalid && capacity.touched"
+    >
+      Field is required.
+    </span>
   </div>
 
   <div class="form-group">

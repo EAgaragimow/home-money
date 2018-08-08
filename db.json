@@ -20,8 +20,18 @@
   "categories": [
     {
       "name": "Дом",
-      "capacity": 7000,
+      "capacity": 15000,
       "id": 1
+    },
+    {
+      "name": "Еда",
+      "capacity": 10000,
+      "id": 2
+    },
+    {
+      "name": "Машина",
+      "capacity": 7000,
+      "id": 3
     }
   ]
 }

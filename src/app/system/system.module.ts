@@ -27,6 +27,7 @@ import {MomentPipe} from "./shared/pipes/moment.pipe";
 
 // DIRECTIVES
 import {DropdownDirective} from "./shared/directives/dropdown.directive";
+import {CategoriesService} from "./shared/services/categories.service";
 
 @NgModule({
   declarations: [
@@ -50,7 +51,10 @@ import {DropdownDirective} from "./shared/directives/dropdown.directive";
     SharedModule,
     SystemRoutingModule
   ],
-  providers: [BillService]
+  providers: [
+    BillService,
+    CategoriesService
+  ]
 })
 export class SystemModule {
 }
