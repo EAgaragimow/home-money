@@ -8,6 +8,21 @@
   justify-content: center;
 }
 
+.alert {
+  &-danger,
+  &-success {
+    color: #fff;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    background: #ff3535;
+  }
+
+  &-success {
+    background: #30ea14;
+  }
+}
+
 form {
   .form-group {
     margin: 10px 0;

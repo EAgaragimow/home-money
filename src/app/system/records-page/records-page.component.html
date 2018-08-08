@@ -5,19 +5,25 @@
     </div>
   </header>
 
-  <div class="wrap">
-    <div class="add-event">
-      <mel-add-event></mel-add-event>
-    </div>
-
-    <div class="add-category">
-      <mel-add-category></mel-add-category>
-    </div>
+  <div *ngIf="!isLoaded">
+    Loading ...
   </div>
 
-  <div class="wrap">
-    <div class="add-category">
-      <mel-edit-category></mel-edit-category>
+  <div *ngIf="isLoaded">
+    <div class="wrap">
+      <div class="add-event">
+        <mel-add-event></mel-add-event>
+      </div>
+
+      <div class="add-category">
+        <mel-add-category (onCategoryAdd)="newCategoryAdded($event)"></mel-add-category>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="add-category">
+        <mel-edit-category (onCategoryEdit)="categoryWasEdited($event)" [categories]="categories"></mel-edit-category>
+      </div>
     </div>
   </div>
 </div>
