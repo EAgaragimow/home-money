@@ -1,27 +1,26 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
-import { Bill } from '../../shared/models/bill-model';
+import {Bill} from '../../shared/models/bill.model';
 
 @Component({
-	selector: 'mel-bill-card',
-	templateUrl: './bill-card.component.html',
-	styleUrls: ['./bill-card.component.scss']
+  selector: 'mel-bill-card',
+  templateUrl: './bill-card.component.html',
+  styleUrls: ['./bill-card.component.scss']
 })
 export class BillCardComponent implements OnInit {
-	@Input() bill: Bill;
-	@Input() currency: any;
+  @Input() bill: Bill;
+  @Input() currency: any;
 
-	dollar: number;
-	euro: number;
+  dollar: number;
+  euro: number;
 
-	constructor() { }
+  constructor() {
+  }
 
-	ngOnInit() {
-		const { rates } = this.currency;
-		this.dollar = Number((this.bill['value'] / (rates['RUB'] / rates['USD'])));
-		this.euro = Number((this.bill['value'] / rates['RUB']));
-
-		console.log(this.currency);
-	}
+  ngOnInit() {
+    const {rates} = this.currency;
+    this.dollar = Number((this.bill['value'] / (rates['RUB'] / rates['USD'])));
+    this.euro = Number((this.bill['value'] / rates['RUB']));
+  }
 
 }

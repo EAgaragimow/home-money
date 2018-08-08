@@ -24,6 +24,8 @@ import {MomentPipe} from "./shared/pipes/moment.pipe";
 
 // DIRECTIVES
 import {DropdownDirective} from "./shared/directives/dropdown.directive";
+import { AddEventComponent } from './records-page/add-event/add-event.component';
+import { AddCategoryComponent } from './records-page/add-category/add-category.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import {DropdownDirective} from "./shared/directives/dropdown.directive";
     DropdownDirective,
     BillCardComponent,
     CurrencyCardComponent,
-    MomentPipe
+    MomentPipe,
+    AddEventComponent,
+    AddCategoryComponent
   ],
   imports: [
     CommonModule,

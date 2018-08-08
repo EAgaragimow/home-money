@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'mel-currency-card',
@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class CurrencyCardComponent {
 
-	@Input() currency: any;
-	currencies: string[] = ['USD', 'EUR'];
+  @Input() currency: any;
+  currencies: string[] = ['USD', 'EUR'];
 
 }

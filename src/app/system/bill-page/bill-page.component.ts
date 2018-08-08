@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {BillService} from "../shared/services/bill.service";
 import {Observable} from "rxjs/Observable";
-import {Bill} from "../shared/models/bill-model";
+import {Bill} from "../shared/models/bill.model";
 import {Subscription} from "rxjs/Subscription";
 
 @Component({
@@ -18,7 +18,8 @@ export class BillPageComponent implements OnInit, OnDestroy {
 
   isLoaded = false;
 
-  constructor(private billService: BillService) { }
+  constructor(private billService: BillService) {
+  }
 
   ngOnInit() {
     this.sub1 = Observable.combineLatest(

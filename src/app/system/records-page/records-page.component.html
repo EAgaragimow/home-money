@@ -7,57 +7,11 @@
 
   <div class="wrap">
     <div class="add-event">
-      <div class="head">
-        Добавить событие
-      </div>
-
-      <form>
-        <div class="form-group">
-          <label for="category" class="form-group__label">Выберите категорию</label>
-          <select class="form-group__select" name="category" id="category">
-            <option value="1">First category</option>
-            <option value="2">Second category</option>
-            <option value="3">Third category</option>
-          </select>
-        </div>
-
-        <div class="form-group type">
-          <label class="form-group__label">Выберите тип</label>
-          <label for="Income" class="form-group__radio"><input type="radio" id="Income"> Доход</label>
-          <label for="Flow" class="form-group__radio"><input type="radio" id="Flow"> Расход</label>
-        </div>
-
-        <div class="form-group">
-          <label class="form-group__label" for="sum">Введите сумму</label>
-          <input type="text" class="form-group__input" id="sum" placeholder="0">
-        </div>
-
-        <div class="form-group">
-          <button type="submit" class="form-group__submit">Добавить</button>
-        </div>
-      </form>
+      <mel-add-event></mel-add-event>
     </div>
 
     <div class="add-category">
-      <div class="head">
-        Добавить категорию
-      </div>
-
-      <form>
-        <div class="form-group">
-          <label for="name" class="form-group__label">Введите название</label>
-          <input type="text" class="form-group__input" id="name" placeholder="Название">
-        </div>
-
-        <div class="form-group">
-          <label for="limit" class="form-group__label">Введите лимит</label>
-          <input type="text" class="form-group__input" id="limit" placeholder="0">
-        </div>
-
-        <div class="form-group">
-          <button type="submit" class="form-group__submit">Добавить</button>
-        </div>
-      </form>
+      <mel-add-category></mel-add-category>
     </div>
   </div>
 </div>

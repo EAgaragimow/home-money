@@ -11,12 +11,12 @@
     <tr class="table-tbody-tr">
       <td class="table-tbody-tr-td">RUB</td>
       <td class="table-tbody-tr-td">1</td>
-      <td class="table-tbody-tr-td">{{ currency.date }}</td>
+      <td class="table-tbody-tr-td">{{ currency.date | melMoment:'YYYY-MM-DD' }}</td>
     </tr>
     <tr class="table-tbody-tr" *ngFor="let c of currencies">
       <td class="table-tbody-tr-td">{{ c }}</td>
       <td class="table-tbody-tr-td">{{ 1 / (currency.rates['RUB'] / currency.rates[c]) | number:'1.6'}}</td>
-      <td class="table-tbody-tr-td">{{ currency.date }}</td>
+      <td class="table-tbody-tr-td">{{ currency.date | melMoment:'YYYY-MM-DD' }}</td>
     </tr>
   </tbody>
 </table>
