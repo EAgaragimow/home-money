@@ -13,4 +13,8 @@ export class EventsService extends BaseApi {
   addEvent(event: MELEvent): Observable<MELEvent> {
     return this.post('events', event);
   }
+
+  getEvents(): Observable<MELEvent[]> {
+    return this.get('events');
+  }
 }
