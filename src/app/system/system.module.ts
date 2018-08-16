@@ -21,13 +21,14 @@ import {EditCategoryComponent} from './records-page/edit-category/edit-category.
 
 // SERVICES
 import {BillService} from "./shared/services/bill.service";
+import {CategoriesService} from "./shared/services/categories.service";
+import {EventsService} from "./shared/services/events.service";
 
 // PIPES
 import {MomentPipe} from "./shared/pipes/moment.pipe";
 
 // DIRECTIVES
 import {DropdownDirective} from "./shared/directives/dropdown.directive";
-import {CategoriesService} from "./shared/services/categories.service";
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import {CategoriesService} from "./shared/services/categories.service";
   ],
   providers: [
     BillService,
-    CategoriesService
+    CategoriesService,
+    EventsService
   ]
 })
 export class SystemModule {
