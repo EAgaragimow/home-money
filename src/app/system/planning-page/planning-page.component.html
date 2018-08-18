@@ -17,42 +17,17 @@
 			<div class="expenses-item" *ngFor="let c of categories">
 			    <div class="expenses-group">
 				    <div class="progress">
-					    <div class="progress-bar">
+					    <div class="progress-bar {{ getCategoryColorClass(c) }}" [ngStyle]="{width: getCategoryPercent(c)}">
 						    {{ c.name }}
 					    </div>
 				    </div>
 				    <div class="balance-info">
-					    <span class="current" style="color: #29a629;">{{ getCategoryCost(c) | number:'1.2' }}</span> из <span class="max">{{ c.capacity | number:'1.2' }}</span>
-					    | осталось <span class="current-balance">{{ (c.capacity - getCategoryCost(c)) | number:'1.2' }}</span>(руб.)
+					    <span class="current-{{ getCategoryColorClass(c) }}">{{ getCategoryCost(c) | number:'1.2' }}</span> из <span class="max">{{ c.capacity | number:'1.2' }}</span>
+					    | осталось <span class="current-balance-{{ getCategoryColorClass(c) }}">{{ c.capacity - getCategoryCost(c) | number:'1.2' }}</span>(руб.)
 				    </div>
 			    </div>
 			</div>
-			<!--<div class="expenses-item">-->
-			    <!--<div class="expenses-group">-->
-				    <!--<div class="progress sixty">-->
-					    <!--<div class="progress-bar">-->
-						    <!--Название категории-->
-					    <!--</div>-->
-				    <!--</div>-->
-				    <!--<div class="balance-info">-->
-					    <!--<span class="current" style="color: #e98426;">600.00</span> из <span class="max">1000.00</span>-->
-					    <!--| осталось <span class="current-balance">400.00</span>(руб.)-->
-				    <!--</div>-->
-			    <!--</div>-->
-			<!--</div>-->
-			<!--<div class="expenses-item">-->
-			    <!--<div class="expenses-group">-->
-				    <!--<div class="progress full">-->
-					    <!--<div class="progress-bar">-->
-						    <!--Название категории-->
-					    <!--</div>-->
-				    <!--</div>-->
-				    <!--<div class="balance-info">-->
-					    <!--<span class="current" style="color: #e73024;">1200.00</span> из <span class="max">1000.00</span>-->
-					    <!--| осталось <span class="current-balance" style="color: #e73024;">-200.00</span>(руб.)-->
-				    <!--</div>-->
-			    <!--</div>-->
-			<!--</div>-->
+			<!-- sixty, full -->
 		</div>
 	</div>
 </div>

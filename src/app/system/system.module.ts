@@ -18,6 +18,10 @@ import {CurrencyCardComponent} from './bill-page/currency-card/currency-card.com
 import {AddEventComponent} from './records-page/add-event/add-event.component';
 import {AddCategoryComponent} from './records-page/add-category/add-category.component';
 import {EditCategoryComponent} from './records-page/edit-category/edit-category.component';
+import {HistoryChartComponent} from './history-page/history-chart/history-chart.component';
+import {HistoryEventsComponent} from './history-page/history-events/history-events.component';
+import {HistoryDetailComponent} from './history-page/history-detail/history-detail.component';
+import {HistoryFilterComponent} from './history-page/history-filter/history-filter.component';
 
 // SERVICES
 import {BillService} from "./shared/services/bill.service";
@@ -45,7 +49,11 @@ import {DropdownDirective} from "./shared/directives/dropdown.directive";
     MomentPipe,
     AddEventComponent,
     AddCategoryComponent,
-    EditCategoryComponent
+    EditCategoryComponent,
+    HistoryChartComponent,
+    HistoryEventsComponent,
+    HistoryDetailComponent,
+    HistoryFilterComponent
   ],
   imports: [
     CommonModule,

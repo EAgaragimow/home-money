@@ -608,9 +608,12 @@ form {
             justify-content: center;
             align-items: center;
 
-            .progress,
+            .progress {
+              flex-basis: 45%;
+            }
+
             .balance-info {
-              flex-basis: 50%;
+              flex-grow: 1;
             }
 
             .progress {
@@ -631,17 +634,18 @@ form {
                 top: 0;
                 height: 100%;
                 border-radius: 3px;
-                background: rgba(96, 224, 28, 0.7);
-              }
 
-              &.sixty .progress-bar {
-                width: 60%;
-                background: rgba(224, 131, 20, 0.7);
-              }
+                &.success {
+                  background: rgba(96, 224, 28, 0.7);
+                }
 
-              &.full .progress-bar {
-                width: 100%;
-                background: rgba(224, 29, 10, 0.7);
+                &.warning {
+                  background: rgba(224, 131, 20, 0.7);
+                }
+
+                &.danger {
+                  background: rgba(224, 29, 10, 0.7);
+                }
               }
             }
 
@@ -654,8 +658,19 @@ form {
                 color: dodgerblue;
               }
 
+              .current,
               .current-balance {
-                color: #29a629;
+                &-success {
+                  color: rgba(96, 224, 28, 0.85);
+                }
+
+                &-warning {
+                  color: rgba(224, 131, 20, 0.7);
+                }
+
+                &-danger {
+                  color: rgba(224, 29, 10, 0.85);
+                }
               }
             }
           }

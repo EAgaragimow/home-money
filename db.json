@@ -14,7 +14,7 @@
     }
   ],
   "bill": {
-    "value": 100000,
+    "value": 85500,
     "currency": "RUB"
   },
   "categories": [
@@ -58,6 +58,46 @@
       "date": "16.08.2018 13.25.41",
       "description": "Продал огурцы и помидоры",
       "id": 3
+    },
+    {
+      "type": "outcome",
+      "amount": 5000,
+      "category": 3,
+      "date": "18.08.2018 11.20.11",
+      "description": "ремонт",
+      "id": 4
+    },
+    {
+      "type": "outcome",
+      "amount": 2500,
+      "category": 2,
+      "date": "18.08.2018 11.20.40",
+      "description": "Супермаркет",
+      "id": 5
+    },
+    {
+      "type": "outcome",
+      "amount": 3500,
+      "category": 3,
+      "date": "18.08.2018 11.21.09",
+      "description": "газ",
+      "id": 6
+    },
+    {
+      "type": "outcome",
+      "amount": 2000,
+      "category": 2,
+      "date": "18.08.2018 11.21.25",
+      "description": "АТБ",
+      "id": 7
+    },
+    {
+      "type": "outcome",
+      "amount": 1500,
+      "category": 2,
+      "date": "18.08.2018 11.32.06",
+      "description": "Супермаркет",
+      "id": 8
     }
   ]
 }
