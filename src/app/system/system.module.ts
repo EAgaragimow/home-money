@@ -1,5 +1,6 @@
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 // OUR MODULES
 import {SharedModule} from "../shared/shared.module";
@@ -58,7 +59,8 @@ import {DropdownDirective} from "./shared/directives/dropdown.directive";
   imports: [
     CommonModule,
     SharedModule,
-    SystemRoutingModule
+    SystemRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [
     BillService,
